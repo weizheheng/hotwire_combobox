@@ -161,7 +161,7 @@ function randomUUID() {
 
 Combobox.Autocomplete = Base => class extends Base {
   _connectListAutocomplete() {
-    if (!this._autocompletesList) {
+    if (this._autocompletesList) {
       this._visuallyHideListbox();
     }
   }
