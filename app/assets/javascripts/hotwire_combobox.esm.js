@@ -161,7 +161,7 @@ function randomUUID() {
 
 Combobox.Autocomplete = Base => class extends Base {
   _connectListAutocomplete() {
-    if (this._autocompletesList) {
+    if (!this._autocompletesList) {
       this._visuallyHideListbox();
     }
   }
@@ -1604,11 +1604,12 @@ Combobox.Toggle = Base => class extends Base {
       this._preselectSingle();
     }
 
-    if (this._autocompletesList && this._isSmallViewport) {
-      this._openInDialog();
-    } else {
-      this._openInline();
-    }
+    //if (this._autocompletesList && this._isSmallViewport) {
+    //  this._openInDialog();
+    //} else {
+    //  this._openInline();
+    //}
+    this._openInline()
 
     this._actingCombobox.setAttribute("aria-expanded", true); // needs to happen after setting acting combobox
   }
